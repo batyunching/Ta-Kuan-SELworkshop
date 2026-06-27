@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>暖心對話，讓課程有溫度｜SEL 研習平台</title>
+  <link rel="stylesheet" href="styles.css?v=20260627">
+  <script src="supabase-config.js"></script>
+  <script src="app.js?v=20260627-storage-fix" defer></script>
+</head>
+<body>
+  <div class="login-screen" id="loginScreen">
+    <section class="login-panel" aria-labelledby="loginTitle">
+      <p class="eyebrow">SEL 融入課程與對話研習平台</p>
+      <h1 id="loginTitle">暖心對話，讓課程有溫度</h1>
+      <p class="login-copy">請先選擇身分並輸入姓名，系統會用這些資料協助您找回草稿與成果。</p>
+
+      <form class="login-form" id="loginForm">
+        <fieldset class="identity-options" aria-label="選擇身分">
+          <legend>選擇身分</legend>
+          <label>
+            <input type="radio" name="identity" value="訪客" checked>
+            <span>訪客</span>
+          </label>
+          <label>
+            <input type="radio" name="identity" value="教職員">
+            <span>教職員</span>
+          </label>
+        </fieldset>
+
+        <label class="field">
+          <span>姓名</span>
+          <input id="loginName" type="text" autocomplete="name" required placeholder="請輸入姓名">
+        </label>
+
+        <label class="field">
+          <span>識別碼，選填</span>
+          <input id="loginCode" type="text" autocomplete="off" placeholder="同名時可填手機末四碼或研習代碼">
+        </label>
+
+        <button class="primary-action" type="submit">進入研習平台</button>
+      </form>
+    </section>
+  </div>
+
+  <div class="app-shell" id="appShell" hidden>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">大觀國中 SEL 研習</p>
+        <h1>暖心對話，讓課程有溫度</h1>
+      </div>
+      <div class="user-tools">
+        <span class="storage-badge" id="storageBadge">儲存模式檢查中</span>
+        <span class="user-badge" id="userBadge"></span>
+        <button class="ghost-button" id="logoutButton" type="button">登出</button>
+      </div>
+    </header>
+
+    <nav class="tabbar" aria-label="主要功能">
+      <button class="tab-button active" data-tab="api" type="button">API Key 申請</button>
+      <button class="tab-button" data-tab="mentor" type="button">導師暖心作戰手冊</button>
+      <button class="tab-button" data-tab="thermometer" type="button">大觀課程溫度計</button>
+      <button class="tab-button" data-tab="showcase" type="button">成果發表區</button>
+      <button class="tab-button admin-tab" data-tab="admin" type="button">管理者後台</button>
+    </nav>
+
+    <main class="content">
+      <section class="page-section active" data-page="api" aria-labelledby="apiTitle">
+        <div class="section-heading">
+          <p class="eyebrow">第一步</p>
+          <h2 id="apiTitle">Google AI Studio API Key 的產生</h2>
+          <p>請老師先完成 API Key 申請，再開啟兩個工具網站進行練習。研習平台不會要求輸入或上傳 API Key。</p>
+        </div>
+
+        <div class="split-layout">
+          <div class="instruction-list">
+            <article class="step-item">
+              <span>1</span>
+              <div>
+                <h3>登入 Google AI Studio</h3>
+                <p>使用自己的 Google 帳號登入，建議使用個人可管理的帳號。</p>
+              </div>
+            </article>
+            <article class="step-item">
+              <span>2</span>
+              <div>
+                <h3>建立 API Key</h3>
+                <p>進入 API Key 相關頁面，依畫面指示建立並複製自己的金鑰。</p>
+              </div>
+            </article>
+            <article class="step-item">
+              <span>3</span>
+              <div>
+                <h3>妥善保存</h3>
+                <p>API Key 是個人使用憑證，請不要貼到公開文件或研習成果中。</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="action-panel">
+            <h3>教學資源</h3>
+            <p>若操作中斷，可重新開啟影片或 Google AI Studio 接續完成。</p>
+            <div class="button-row">
+              <a class="primary-action link-button" href="https://aistudio.google.com/" target="_blank" rel="noopener">開啟 Google AI Studio</a>
+              <a class="secondary-action link-button" href="https://youtu.be/QeDWGVxZ59E" target="_blank" rel="noopener">觀看 API Key 申請影片</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section" data-page="mentor" aria-labelledby="mentorTitle">
+        <div class="section-heading">
+          <p class="eyebrow">第二步</p>
+          <h2 id="mentorTitle">導師暖心作戰手冊</h2>
+          <p>請開新分頁操作工具，完成後回到本頁上傳截圖或文件成果。</p>
+        </div>
+
+        <div class="tool-layout">
+          <aside class="tool-entry">
+            <h3>工具入口</h3>
+            <img class="qr-image" src="https://drive.google.com/uc?export=view&id=1hnbSJGi2Ntt_nV5_grwglVCsn3LaHP8o" alt="導師暖心作戰手冊 QR Code">
+            <div class="button-stack">
+              <a class="primary-action link-button" href="https://gemini.google.com/share/a6f803b23de9" target="_blank" rel="noopener">開啟導師暖心作戰手冊</a>
+              <a class="secondary-action link-button" href="https://drive.google.com/file/d/1hnbSJGi2Ntt_nV5_grwglVCsn3LaHP8o/view?usp=drive_link" target="_blank" rel="noopener">開啟 QR Code 圖檔</a>
+            </div>
+          </aside>
+
+          <div class="work-area">
+            <div class="task-strip">
+              <strong>練習任務</strong>
+              <span>選擇一個班級經營或學生對話情境，使用工具產生導師回應建議，再上傳成果。</span>
+            </div>
+            <form class="submission-form" data-form="mentor">
+              <input type="hidden" name="category" value="mentor">
+              <div class="form-grid">
+                <label class="field">
+                  <span>成果標題</span>
+                  <input name="title" type="text" required placeholder="例如：學生情緒低落時的導師回應">
+                </label>
+                <label class="field">
+                  <span>上傳檔案</span>
+                  <input name="file" type="file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.ppt,.pptx">
+                </label>
+              </div>
+              <label class="field">
+                <span>簡短說明或心得</span>
+                <textarea name="description" rows="5" placeholder="可描述使用情境、工具產出重點、或想和同仁分享的想法"></textarea>
+              </label>
+              <div class="form-actions">
+                <button class="secondary-action" data-save-status="draft" type="submit">儲存草稿</button>
+                <button class="primary-action" data-save-status="published" type="submit">發表成果</button>
+                <button class="ghost-button" data-reset-form type="button">新增另一份</button>
+              </div>
+              <p class="form-note" data-form-note></p>
+            </form>
+            <div class="my-submissions" data-my-list="mentor"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section" data-page="thermometer" aria-labelledby="thermometerTitle">
+        <div class="section-heading">
+          <p class="eyebrow">第三步</p>
+          <h2 id="thermometerTitle">大觀課程溫度計</h2>
+          <p>請開新分頁操作 SEL 社會情緒學習 × 108 課綱素養指標評估系統，完成後回到本頁上傳成果。</p>
+        </div>
+
+        <div class="tool-layout">
+          <aside class="tool-entry">
+            <h3>工具入口</h3>
+            <img class="qr-image" src="https://drive.google.com/uc?export=view&id=1kyJbXfyEu6CMz70Xm6tISf2suySqm0gq" alt="大觀課程溫度計 QR Code">
+            <div class="button-stack">
+              <a class="primary-action link-button" href="https://batyunching.github.io/TKJHS-SEL/" target="_blank" rel="noopener">開啟大觀課程溫度計</a>
+              <a class="secondary-action link-button" href="https://drive.google.com/file/d/1kyJbXfyEu6CMz70Xm6tISf2suySqm0gq/view?usp=drive_link" target="_blank" rel="noopener">開啟 QR Code 圖檔</a>
+            </div>
+          </aside>
+
+          <div class="work-area">
+            <div class="task-strip">
+              <strong>練習任務</strong>
+              <span>選擇一份課程或教學活動，評估 SEL 與 108 課綱素養指標的對應，再上傳分析結果。</span>
+            </div>
+            <form class="submission-form" data-form="thermometer">
+              <input type="hidden" name="category" value="thermometer">
+              <div class="form-grid">
+                <label class="field">
+                  <span>成果標題</span>
+                  <input name="title" type="text" required placeholder="例如：七年級班會課 SEL 指標分析">
+                </label>
+                <label class="field">
+                  <span>上傳檔案</span>
+                  <input name="file" type="file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.ppt,.pptx">
+                </label>
+              </div>
+              <label class="field">
+                <span>簡短說明或心得</span>
+                <textarea name="description" rows="5" placeholder="可描述課程主題、評估結果、或想調整的教學方向"></textarea>
+              </label>
+              <div class="form-actions">
+                <button class="secondary-action" data-save-status="draft" type="submit">儲存草稿</button>
+                <button class="primary-action" data-save-status="published" type="submit">發表成果</button>
+                <button class="ghost-button" data-reset-form type="button">新增另一份</button>
+              </div>
+              <p class="form-note" data-form-note></p>
+            </form>
+            <div class="my-submissions" data-my-list="thermometer"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section" data-page="showcase" aria-labelledby="showcaseTitle">
+        <div class="section-heading">
+          <p class="eyebrow">第四步</p>
+          <h2 id="showcaseTitle">成果發表區</h2>
+          <p>此區只顯示已發表成果，可依工具分類篩選，並使用放大檢視進行投影分享。</p>
+        </div>
+
+        <div class="toolbar">
+          <div class="segmented" aria-label="成果分類">
+            <button class="segment active" data-showcase-filter="all" type="button">全部成果</button>
+            <button class="segment" data-showcase-filter="mentor" type="button">導師暖心作戰手冊</button>
+            <button class="segment" data-showcase-filter="thermometer" type="button">大觀課程溫度計</button>
+          </div>
+        </div>
+
+        <div class="submission-grid" id="showcaseGrid"></div>
+      </section>
+
+      <section class="page-section" data-page="admin" aria-labelledby="adminTitle">
+        <div class="section-heading">
+          <p class="eyebrow">管理者專用</p>
+          <h2 id="adminTitle">管理者後台</h2>
+          <p>可查看、篩選、單獨刪除或批次刪除成果。所有刪除動作都會再次確認。</p>
+        </div>
+
+        <form class="admin-login" id="adminLoginForm">
+          <label class="field">
+            <span>管理者密碼</span>
+            <input id="adminPassword" type="password" autocomplete="current-password" placeholder="請輸入管理者密碼">
+          </label>
+          <button class="primary-action" type="submit">進入後台</button>
+          <p class="form-note" id="adminLoginNote"></p>
+        </form>
+
+        <div class="admin-panel" id="adminPanel" hidden>
+          <div class="toolbar admin-toolbar">
+            <label class="field compact-field">
+              <span>成果類型</span>
+              <select id="adminCategoryFilter">
+                <option value="all">全部</option>
+                <option value="mentor">導師暖心作戰手冊</option>
+                <option value="thermometer">大觀課程溫度計</option>
+              </select>
+            </label>
+            <label class="field compact-field">
+              <span>狀態</span>
+              <select id="adminStatusFilter">
+                <option value="all">全部</option>
+                <option value="draft">草稿</option>
+                <option value="published">已發表</option>
+              </select>
+            </label>
+            <label class="field compact-field search-field">
+              <span>搜尋姓名</span>
+              <input id="adminSearch" type="search" placeholder="輸入上傳者姓名">
+            </label>
+            <button class="danger-action" id="batchDeleteButton" type="button" disabled>批次刪除</button>
+          </div>
+          <div class="admin-list" id="adminList"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="projection-dialog" id="projectionDialog">
+    <div class="projection-shell">
+      <header>
+        <div>
+          <p class="eyebrow" id="projectionType"></p>
+          <h2 id="projectionTitle"></h2>
+          <p id="projectionMeta"></p>
+        </div>
+        <button class="ghost-button light" id="closeProjection" type="button">關閉</button>
+      </header>
+      <div class="projection-body" id="projectionBody"></div>
+      <footer>
+        <button class="secondary-action light" id="prevProjection" type="button">上一件</button>
+        <button class="secondary-action light" id="nextProjection" type="button">下一件</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <dialog class="confirm-dialog" id="confirmDialog">
+    <form method="dialog">
+      <h2 id="confirmTitle">確認操作</h2>
+      <p id="confirmMessage"></p>
+      <div class="confirm-items" id="confirmItems"></div>
+      <div class="confirm-actions">
+        <button class="ghost-button" value="cancel" type="submit">取消</button>
+        <button class="danger-action" id="confirmButton" value="confirm" type="submit">確認刪除</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
