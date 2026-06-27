@@ -56,12 +56,16 @@ a {
 }
 
 .login-panel {
-  width: min(100%, 560px);
+  width: min(100%, 980px);
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
   padding: clamp(28px, 5vw, 46px);
+}
+
+.login-intro {
+  max-width: 720px;
 }
 
 .eyebrow {
@@ -105,7 +109,15 @@ p {
   margin: 18px 0 26px;
 }
 
+.login-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(280px, 360px);
+  gap: 20px;
+  align-items: start;
+}
+
 .login-form,
+.login-share-card,
 .submission-form,
 .admin-login,
 .action-panel,
@@ -114,6 +126,25 @@ p {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 22px;
+}
+
+.login-share-card h2 {
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.login-share-card p {
+  margin: 10px 0 16px;
+}
+
+.login-qr-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
 }
 
 .identity-options {
@@ -740,6 +771,7 @@ p {
   .topbar,
   .split-layout,
   .tool-layout,
+  .login-grid,
   .form-grid {
     grid-template-columns: 1fr;
   }
@@ -765,6 +797,7 @@ p {
 
   .login-panel,
   .login-form,
+  .login-share-card,
   .submission-form,
   .admin-login,
   .action-panel,

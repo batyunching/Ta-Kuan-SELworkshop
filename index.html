@@ -11,35 +11,50 @@
 <body>
   <div class="login-screen" id="loginScreen">
     <section class="login-panel" aria-labelledby="loginTitle">
-      <p class="eyebrow">SEL 融入課程與對話研習平台</p>
-      <h1 id="loginTitle">暖心對話，讓課程有溫度</h1>
-      <p class="login-copy">請先選擇身分並輸入姓名，系統會用這些資料協助您找回草稿與成果。</p>
+      <div class="login-intro">
+        <p class="eyebrow">SEL 融入課程與對話研習平台</p>
+        <h1 id="loginTitle">暖心對話，讓課程有溫度</h1>
+        <p class="login-copy">請先選擇身分並輸入姓名，系統會用這些資料協助您找回草稿與成果。</p>
+      </div>
 
-      <form class="login-form" id="loginForm">
-        <fieldset class="identity-options" aria-label="選擇身分">
-          <legend>選擇身分</legend>
-          <label>
-            <input type="radio" name="identity" value="訪客" checked>
-            <span>訪客</span>
+      <div class="login-grid">
+        <form class="login-form" id="loginForm">
+          <fieldset class="identity-options" aria-label="選擇身分">
+            <legend>選擇身分</legend>
+            <label>
+              <input type="radio" name="identity" value="訪客" checked>
+              <span>訪客</span>
+            </label>
+            <label>
+              <input type="radio" name="identity" value="教職員">
+              <span>教職員</span>
+            </label>
+          </fieldset>
+
+          <label class="field">
+            <span>姓名</span>
+            <input id="loginName" type="text" autocomplete="name" required placeholder="請輸入姓名">
           </label>
-          <label>
-            <input type="radio" name="identity" value="教職員">
-            <span>教職員</span>
+
+          <label class="field">
+            <span>識別碼，選填</span>
+            <input id="loginCode" type="text" autocomplete="off" placeholder="同名時可填手機末四碼或研習代碼">
           </label>
-        </fieldset>
 
-        <label class="field">
-          <span>姓名</span>
-          <input id="loginName" type="text" autocomplete="name" required placeholder="請輸入姓名">
-        </label>
+          <button class="primary-action" type="submit">進入研習平台</button>
+        </form>
 
-        <label class="field">
-          <span>識別碼，選填</span>
-          <input id="loginCode" type="text" autocomplete="off" placeholder="同名時可填手機末四碼或研習代碼">
-        </label>
-
-        <button class="primary-action" type="submit">進入研習平台</button>
-      </form>
+        <aside class="login-share-card" aria-labelledby="shareSiteTitle">
+          <p class="eyebrow">講師投影入口</p>
+          <h2 id="shareSiteTitle">備課日 SEL 分享網頁</h2>
+          <p>老師可以掃描 QR Code 或點選下方連結，直接加入本次研習網站。</p>
+          <img class="login-qr-image" src="https://drive.google.com/uc?export=view&id=1eVvEpOqrmR9c0g3U8nApqteEdyxsKyos" alt="備課日 SEL 分享網頁 QR Code">
+          <div class="button-stack">
+            <a class="primary-action link-button" href="https://batyunching.github.io/Ta-Kuan-SELworkshop/" target="_blank" rel="noopener">開啟備課日 SEL 分享網頁</a>
+            <a class="secondary-action link-button" href="https://drive.google.com/file/d/1eVvEpOqrmR9c0g3U8nApqteEdyxsKyos/view?usp=drive_link" target="_blank" rel="noopener">開啟 QR Code 圖檔</a>
+          </div>
+        </aside>
+      </div>
     </section>
   </div>
 
